@@ -1,0 +1,25 @@
+import java.nio.file.attribute.*;
+import java.io.IOException;
+
+public class FileStatistics {
+   public static void main(String[] args) {
+       Path file = Paths.get("C:\Users\svc_OKC_BT228\Documents\Projects\CIS2323_Week15_Quiz1\FileStatistics.txt");
+       try {
+           // declare count and then display path, file name and folder name
+           System.out.println("Path: "+file.toString());
+           System.out.println("File Name: "+file.getFileName());
+           System.out.println("Folder Name: "+file.getParent().getFileName());
+           // declare a BasicFileAttributes object, then add statements to
+           // display the file's size and creation time
+           BasicFileAttributes obj = Files.readAttributes(file, BasicFileAttributes.class);
+           System.out.println("File Size: "+obj.size()+"bytes");
+           System.out.println("File creation Time: "+obj.creationTime());
+           System.out.println("File Modification time: "+obj.lastModifiedTime());
+
+       } catch (IOException e) {
+           // add display IOException
+           System.out.println("There is some problem accessing the file. Please contact administrator.");
+
+       }
+   }
+}
