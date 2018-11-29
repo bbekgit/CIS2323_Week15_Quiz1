@@ -13,7 +13,7 @@ public class FileStatistics
     try
     {
 //get a filePath object of class File
-   File filePath =new File("C:\\Users\\svc_OKC_BT228\\Documents\\Projects\\CIS2323_Week15_Quiz1\\FileStatistics.txt");
+   File filePath =new File("C:\\FileStatistics.txt");
 
     System.out.println("File Path "+filePath.getAbsolutePath());
 
